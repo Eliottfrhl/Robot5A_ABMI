@@ -8,10 +8,11 @@
 #include <opencv2/opencv.hpp>
 #include <sensor_msgs/msg/image.hpp>
 #include <cv_bridge/cv_bridge.hpp>
-#include <errno.h> // Pour errno
+#include <errno.h> 
 
 int main(int argc, char** argv)
 {
+    // Initialisation de ROS2
     rclcpp::init(argc, argv);
     auto node = std::make_shared<rclcpp::Node>("ue_image_receiver");
 
@@ -78,7 +79,7 @@ int main(int argc, char** argv)
         return 1;
     }
 
-    // Create the publisher
+    // Créer le publisher
     auto image_publisher = node->create_publisher<sensor_msgs::msg::Image>("ue_grayscale_image", 10);
 
     RCLCPP_INFO(node->get_logger(), "Start Receiving using key %d and shmid %d..", key, shmid);
@@ -86,7 +87,7 @@ int main(int argc, char** argv)
     {
         if (shmid != -1 && data != (void*)-1)
         {
-            // Copie des données de la mémoire partagée dans une matrice OpenCV
+            // Copier les données de la mémoire partagée dans une matrice OpenCV
             cv::Mat image(imageHeight, imageWidth, CV_8UC1, data);
 
             // Convertir l'image en message ROS2
@@ -106,9 +107,10 @@ int main(int argc, char** argv)
             cv::imshow("Received Grayscale Image", image);
             cv::waitKey(1); // Met à jour l'affichage et gère les événements de la fenêtre
         }
-        std::this_thread::sleep_for(std::chrono::milliseconds(100));
+        std::this_thread::sleep_for(std::chrono::milliseconds(100)); // Pause de 100ms entre chaque itération
     }
 
+    // Détacher le segment de mémoire partagée avant de quitter
     if (shmdt(data) == -1)
     {
         RCLCPP_ERROR(node->get_logger(), "Error in shmdt: %s", strerror(errno));
