@@ -1,0 +1,38 @@
+# Ignorer les dossiers de build, install et log
+build/
+install/
+log/
+
+# Ignorer les fichiers de configuration de VSCode
+.vscode/
+
+# Ignorer les fichiers temporaires ou spécifiques au système
+*.swp
+*.swo
+*.swn
+*.bak
+*.tmp
+
+# Ignorer les fichiers de compilation Python
+__pycache__/
+*.py[cod]
+
+# Ignorer les fichiers de logs
+*.log
+
+# Ignorer les fichiers binaires générés
+*.out
+*.o
+*.so
+
+# Ignorer les fichiers d'installation de CMake
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+compile_commands.json
+
+# Ignorer les fichiers générés par ROS2
+src/*/install/
+src/*/build/
+src/*/log/

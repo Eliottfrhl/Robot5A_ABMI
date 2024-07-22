@@ -1,0 +1,21 @@
+<package format="3">
+  <name>robot_pose_transformer</name>
+  <version>0.0.0</version>
+  <description>The robot_pose_transformer package</description>
+  <maintainer email="your_email@domain.com">Your Name</maintainer>
+  <license>Apache License 2.0</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <depend>rclcpp</depend>
+  <depend>geometry_msgs</depend>
+  <depend>tf2</depend>
+  <depend>tf2_geometry_msgs</depend>  <!-- Ajout de tf2_geometry_msgs -->
+  <depend>Eigen3</depend>
+  <depend>interfaces</depend>         <!-- Ajout de la dépendance interfaces -->
+  <depend>yaml-cpp</depend>           <!-- Ajout de la dépendance yaml-cpp -->
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>
