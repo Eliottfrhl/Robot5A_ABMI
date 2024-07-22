@@ -26,12 +26,6 @@ solids: # Listes des matrices de transformation homogènes des marqueurs ArUco d
           - [0.866, 0.5, 0.0, 0.5]
           - [0.0, 0.0, 1.0, 0.6]
           - [0.0, 0.0, 0.0, 1.0]
-      - id: 20
-        transform:
-          - [0.258, -0.966, 0.0, 0.5]
-          - [0.966, 0.258, 0.0, 0.6]
-          - [0.0, 0.0, 1.0, 0.7]
-          - [0.0, 0.0, 0.0, 1.0]
   - id: 1
     name: "arm_segment_1"
     aruco_markers:
