@@ -34,3 +34,7 @@ ros2 launch comm_ue launch_simulation.py
 ~~~
 
 Assurez-vous que les fichiers de configuration camera_calibration.yaml et transform.yaml sont placés dans le répertoire src/comm_ue/config/.
+
+## Autres
+
+Les packages interfaces et robot_pose_transformer sont inutilisés pour le moment.
