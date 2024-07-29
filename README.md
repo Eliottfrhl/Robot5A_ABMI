@@ -2,10 +2,11 @@
 
 ## Dépendances
 
-    ROS2 (Robot Operating System 2)
+    ROS2 (Robot Operating System 2) Jazzy    
     OpenCV
     Eigen
     yaml-cpp
+    UnrealEngine 5
 
 ## Instructions d'Installation
 
@@ -24,10 +25,12 @@ source install/setup.bash
 
 ## Exécution
 
-Pour lancer le nœud de détection Aruco :
+Commencer par lancer UE5.
+
+Lancer le launch file avec ROS2 pour initier la communication ROS2/UE5 et la détection d'ArUco.
 
 ~~~
-ros2 run comm_ue aruco_detector
+ros2 launch comm_ue launch_simulation.py
 ~~~
 
 Assurez-vous que les fichiers de configuration camera_calibration.yaml et transform.yaml sont placés dans le répertoire src/comm_ue/config/.
